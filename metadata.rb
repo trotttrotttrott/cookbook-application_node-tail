@@ -6,4 +6,5 @@ description      'Deploys and configures rest-tail'
 long_description  IO.read(File.join(File.dirname(__FILE__), 'README.md'))
 version          '0.0.1'
 
-depends 'application_ruby'
+depends 'application'
+depends 'runit'

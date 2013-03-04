@@ -1,0 +1,5 @@
+#!/bin/bash
+
+cd /usr/local/www/rest-tail/current
+
+bundle exec unicorn -c /etc/unicorn/rest-tail.rb -E production -D -l 0.0.0.0:3001
