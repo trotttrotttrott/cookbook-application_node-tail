@@ -1,9 +1,15 @@
-include Chef::Mixin::LanguageIncludeRecipe
-
 action :before_compile do
 end
 
 action :before_deploy do
+  %w(log tmp/pids tmp/sockets).each do |dir|
+    directory "#{new_resource.path}/shared/#{dir}" do
+      owner new_resource.owner
+      group new_resource.group
+      mode '0755'
+      recursive true
+    end
+  end
 end
 
 action :before_migrate do
