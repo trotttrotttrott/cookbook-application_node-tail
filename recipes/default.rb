@@ -7,7 +7,7 @@ application 'node-tail' do
   group 'travis'
 
   create_dirs_before_symlink(['tmp'])
-  symlinks({ 'log' => 'log', 'tmp/pids' => 'tmp/pids', 'tmp/sockets' => 'tmp/sockets' })
+  symlinks({ 'log' => 'log', 'settings.yml' => 'config/settings.yml', 'tmp/pids' => 'tmp/pids', 'tmp/sockets' => 'tmp/sockets' })
 
   unicorn do
   end
